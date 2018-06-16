@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+	<display-name>04.28</display-name>
+	<welcome-file-list>
+		<welcome-file>LoginPage.jsp</welcome-file>
+	</welcome-file-list>
+	<servlet>
+		<servlet-name>LoginPro</servlet-name>
+		<servlet-class>register.controller.LoginPro</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LoginPro</servlet-name>
+		<url-pattern>/Loginpro</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>RegisterPro</servlet-name>
+		<servlet-class>register.controller.RegisterPro</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RegisterPro</servlet-name>
+		<url-pattern>/RegisterPro</url-pattern>
+	</servlet-mapping>
+	
+	
+	<filter>
+			<display-name>LoginFilter</display-name>
+			<filter-name>LoginFilter</filter-name>
+			<filter-class>shop.Filter.SessionFilter</filter-class>
+			<init-param>
+				<param-name>paths</param-name>
+				<param-value>/LoginPro,/LoginPage.jsp,/listbook.jsp</param-value> 
+			</init-param>
+	</filter>
+</web-app>
